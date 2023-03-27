@@ -1,0 +1,137 @@
+<!<!DOCTYPE html>
+	<html>
+	<head>
+		<link rel="shortcut icon" href="assets/images/logo/monogram.png" type="image/x-icon">
+		<link rel="icon" href="assets/images/logo/monogram.png" type="image/x-icon">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Code by Sonia</title>
+		<style type="text/css">
+			body {
+				background: #2c2c2c;
+				cursor: none;
+				overflow: hidden;
+				font-family: "Roboto", sans-serif;
+			}
+
+			.custom-cursor {
+				width: 60px;
+				height: 60px;
+				background-color: #fff;
+				opacity: 0.3;
+				border-radius: 50%;
+			}
+
+			.title {
+				font-weight: 300;
+				text-align: center;
+				letter-spacing: 10px;
+				font-size: 18px;
+				margin-bottomn: 100px;
+			}
+			.title span {
+				background: radial-gradient(circle, #fff 30%, #c2c2c2 100%);
+				background-clip: text;
+				-webkit-background-clip: text;
+				color: transparent;
+			}
+
+			.holder {
+				transform-style: preserve-3d;
+				width: 80vw;
+				height: 450px;
+				margin: 0 auto;
+				perspective: 1000px;
+			}
+
+			.cylinder {
+				position: relative;
+				height: 100%;
+				width: 100%;
+				transform-style: preserve-3d;
+				animation: spin 30s infinite linear;
+			}
+
+			.face {
+				background: radial-gradient(circle, #fff 30%, #c2c2c2 100%);
+				background-clip: text;
+				-webkit-background-clip: text;
+				color: transparent;
+				font-size: 62px;
+				letter-spacing: 4px;
+				line-height: 50px;
+				font-weight: 900;
+				text-align: center;
+				position: absolute;
+				width: auto;
+				height: 50px;
+				top: 50%;
+				left: 50%;
+				transform: rotateX(calc(18deg * var(--index))) translateZ(calc(159.1549430919px)) translateX(-50%);
+			}
+
+			@keyframes spin {
+				to {
+					transform: rotateX(-360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="coming-soon-wrapper">
+			
+			<div class="custom-cursor"></div>
+			<div class="title"> <span>WE ARE CREATING SOMETING BEST</span></div>
+			<div class="holder">
+				<div class="cylinder">
+					<div class="face" style="--index: 0;">COMING SOON</div>
+					<div class="face" style="--index: 1;">COMING SOON</div>
+					<div class="face" style="--index: 2;">COMING SOON</div>
+					<div class="face" style="--index: 3;">COMING SOON</div>
+					<div class="face" style="--index: 4;">COMING SOON</div>
+					<div class="face" style="--index: 5;">COMING SOON</div>
+					<div class="face" style="--index: 6;">COMING SOON</div>
+					<div class="face" style="--index: 7;">COMING SOON</div>
+					<div class="face" style="--index: 8;">COMING SOON</div>
+					<div class="face" style="--index: 9;">COMING SOON</div>
+					<div class="face" style="--index: 10;">COMING SOON</div>
+					<div class="face" style="--index: 11;">COMING SOON</div>
+					<div class="face" style="--index: 12;">COMING SOON</div>
+					<div class="face" style="--index: 13;">COMING SOON</div>
+					<div class="face" style="--index: 14;">COMING SOON</div>
+					<div class="face" style="--index: 15;">COMING SOON</div>
+					<div class="face" style="--index: 16;">COMING SOON</div>
+					<div class="face" style="--index: 17;">COMING SOON</div>
+					<div class="face" style="--index: 18;">COMING SOON</div>
+					<div class="face" style="--index: 19;">COMING SOON</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			const cursor = document.querySelector('.custom-cursor');
+			const positionElement = (e) => {
+				const mouseY = e.clientY;
+				const mouseX = e.clientX;   
+				cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+			}
+			window.addEventListener('mousemove', positionElement);
+
+			const barrel = document.querySelector(".cylinder");
+			const barrelDimensions = barrel.getBoundingClientRect();
+
+			document.addEventListener("mousemove", e => animateBarrel(e));
+
+			function animateBarrel(e) {
+				const cursor = {
+					x: e.clientX - Math.round(barrelDimensions.left),
+					y: e.clientY - Math.round(barrelDimensions.top)
+				};
+				const angle = {
+					y: 30 * ((cursor.y / barrelDimensions.height) * 2 - 1),
+					x: 30 * ((cursor.x / barrelDimensions.width) * 2 - 1)
+				};
+				barrel.style.transform = `rotateX(${-angle.y}deg) rotateY(${angle.x}deg)`;
+			}
+		</script>
+	</body>
+	</html>
