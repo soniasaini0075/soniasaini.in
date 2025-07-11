@@ -1,0 +1,46 @@
+@import '../../assets/scss/main.scss';
+
+.projects-wrapper-home {
+		.projects-main-div {
+			display: grid;
+			grid-template-columns: repeat(2,1fr);
+			grid-column-gap: 56px;
+			grid-row-gap: 64px;
+			.project-card {
+				transition-duration: 0.4s;
+				figure {
+					overflow: hidden;
+					transition-duration: 0.4s;
+					width: 450px;
+					border-radius: 12px;
+					margin-bottom: 16px;
+					img {
+						transition-duration: 0.4s;
+						width: 100%;
+						object-fit: cover;
+						object-position: center center;
+						height: 316px;
+					}
+				}
+				.description {
+					h4 {
+						margin-bottom: 8px;
+						color: $primary-white;
+					}
+					p {
+						color: $primary-grey;
+					}
+				}
+				&:hover {
+					transition-duration: 0.4s;
+					figure {
+						transition-duration: 0.4s;
+						img {
+							transition-duration: 0.4s;
+							transform: scale(1.1);
+						}
+					}
+				}
+			}
+		}
+	}

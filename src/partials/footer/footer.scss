@@ -1,0 +1,62 @@
+@import '../../assets/scss/main.scss';
+
+footer {
+	&.footer {
+		position: fixed;
+		bottom: 64px;
+		.footer-container {
+			ul {
+				display: flex;
+				gap: 8px;
+				li {
+					transition-duration: 0.4s;
+					a {
+						background: transparent;
+						border: 1px solid $primary-white;
+						border-radius: 24px;
+						color: $primary-white;
+						padding: 8px 16px;
+						transition-duration: 0.4s;
+						position: relative;
+						overflow: hidden;
+						&:before {
+							position: absolute;
+							content: "";
+							background: $primary-white;
+							left: 0;
+							width: 100%;
+							bottom: 0;
+							height: 0%;
+							transition-duration: 0.4s;
+							z-index: 0;
+						}
+						span {
+							color: $primary-white;
+							position: relative;
+							z-index: 9;
+						}
+						&:hover {
+							transition-duration: 0.4s;
+							background: $primary-white;
+							color: $primary-black;
+							transition-duration: 0.4s;
+							span {
+								color: $primary-black;
+							}
+							&:before {
+								height: 100%;
+								transition-duration: 0.4s;
+							}
+						}
+						&.active {
+							background: $primary-white;
+							span {
+								color: $primary-black;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

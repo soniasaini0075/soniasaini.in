@@ -1,0 +1,64 @@
+@import '../../assets/scss/main.scss';
+
+header {
+	&.header {
+		position: fixed;
+		top: 64px;
+		width: 264px;
+		.logo-wrapper {
+			margin-bottom: 40px;
+			span {
+				margin-right: 8px;
+				font-family: "mona-sans-bold", sans-serif;
+				font-style: normal;
+				font-weight: 700;
+				font-size: 18px;
+				line-height: 140%;
+				color: $primary-white;
+			}
+			>img {
+				width: 24px;
+				height: 24px;
+			}
+		}
+		.intro-pointers {
+			margin-bottom: 16px;
+			span {
+				display: inline-block;
+				margin-left: 8px;
+				color: $primary-green;
+			}
+		}
+		.follow-cta-wrapper {
+			span {
+				display: block;
+				margin-bottom: 4px;
+				font-family: "mona-sans-regular";
+				font-style: normal;
+				font-weight: 400;
+				font-size: 12px;
+				line-height: 150%;
+				text-transform: uppercase;
+				color: $primary-grey;
+			}
+			ul {
+				display: flex;
+				gap: 16px;
+				li {
+					a {
+						color: $primary-white;
+						&:hover {
+							color: $primary-red;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+

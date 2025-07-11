@@ -1,0 +1,49 @@
+h1 {
+	font-family: "mona-sans-extrabold", sans-serif;
+	margin-bottom: 0;
+}
+
+h2, h3, h4, h5 {
+	font-family: "mona-sans-bold", sans-serif;
+	margin-bottom: 0;
+}
+
+h1 {
+	font-size: 44px;
+	line-height: 140%;
+}
+
+h2 {
+	font-size: 36px;
+	line-height: 150%;
+	@include phone {
+		font-size: 24px;
+		line-height: 150%;
+	}
+}
+
+h3 {
+	font-size: 28px;
+	line-height: 150%;
+}
+
+h4 {
+	font-size: 24px;
+	line-height: 150%;
+}
+
+h5 {
+	font-size: 20px;
+	line-height: 150%;
+}
+
+h6 {
+	font-size: 16px;
+	line-height: 150%;
+}
+
+p {
+	font-family: "jetbrains-mono-regular", sans-serif;
+	font-size: 16px;
+	line-height: 150%;
+}

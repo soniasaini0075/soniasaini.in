@@ -1,0 +1,151 @@
+@import '../../assets/scss/main.scss';
+
+.about-page {}
+
+.about-page-wrapper {
+	@include phone {}
+	.page-intro-wrapper {
+		margin-bottom: 104px;
+		@include for-tablet-only {}
+		@include phone {
+			margin-bottom: 40px;
+		}
+		.page-intro-name {
+			margin-bottom: 8px;
+		}
+		h2 {
+			margin-bottom: 16px;
+		}
+		p+p {
+			margin-top: 16px;
+		}
+	}
+	.about-me-cards {
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+		gap: 24px;
+		@include for-tablet-only {}
+		@include phone {
+			flex-direction: column;
+		}
+		.span-light {
+			margin-bottom: 24px;
+			@include for-tablet-only {}
+			@include phone {
+				margin-bottom: 16px;
+			}
+			span {
+				margin-bottom: 4px;
+			}
+			p {
+				color: $primary-white;
+				text-transform: initial;
+				a {
+					color: $primary-green;
+				}
+			}
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+		.about-card {
+			background: rgba($primary-white, 0.1);
+			border-radius: 8px;
+			padding: 24px;
+			&.about-detail,
+			&.about-contact {
+				width: 400px;
+				height: 212px;
+				@include for-tablet-only {}
+				@include phone {
+					width: 100%;
+					height: auto;
+				}
+			}
+			&.about-photo {
+				background: none;
+				padding: 0;
+				width: 165px;
+				figure {
+					transition-duration: 0.4s;
+					position: relative;
+					img {
+						transition-duration: 0.4s;
+						width: 100%;
+						object-fit: cover;
+						object-position: center center;
+						&.it-me-arrow {
+							transition-duration: 0.4s;
+							opacity: 0;
+							width: 48px;
+							position: absolute;
+							top: -30px;
+							right: 0;
+							@include for-tablet-only {}
+							@include phone {
+								opacity: 1;
+								top: 80px;
+								right: -100px;
+								transform: rotate(61deg);
+							}
+						}
+					}
+					&:before {
+						position: absolute;
+						content: "It's Me";
+						font-family: "mona-sans-semibold";
+						font-size: 12px;
+						line-height: 150%;
+						text-transform: uppercase;
+						color: $primary-green;
+						opacity: 0;
+						top: -50px;
+						right: -30px;
+						@include for-tablet-only {}
+						@include phone {
+							opacity: 1;
+							right: -200px;
+							top: 53%;
+						}
+					}
+					&:hover {
+						transition-duration: 0.4s;
+						.it-me-arrow {
+							opacity: 1;
+							transition-duration: 0.4s;
+						}
+						&:before {
+							opacity: 1;
+						}
+					}
+				}
+			}
+			.card-details {}
+			&.about-detail {
+				.flex-wrapper {
+					display: flex;
+					justify-content: space-between;
+					align-items: flex-start;
+				}
+			}
+			.mail-link {
+				font-size: 16px;
+				line-height: 24px;
+			}
+		}
+	}
+	.credits-wrapper {
+		margin-top: 40px;
+	}
+}
+
+
+
+
+
+
+
+
+
+

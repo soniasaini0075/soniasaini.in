@@ -1,0 +1,99 @@
+body {
+	background: $primary-black;
+	color: $primary-white;
+	padding: 64px 48px 0 64px;
+	font-family: "jetbrains-mono-regular", sans-serif;
+	@include for-tablet-only {}
+	@include phone {
+		padding: 48px 24px;
+	}
+}
+
+
+
+img {
+	object-fit: cover;
+	object-position: center center;
+}
+
+
+a {
+	&.green-cta-link {
+		color: $primary-green;
+	}
+	&.mail-link {
+		color: $primary-green;
+		font-family: "mona-sans-regular";
+		font-size: 28px;
+		line-height: 150%;
+		padding-bottom: 2px;
+		transition-duration: 0.4s;
+		display: block;
+		width: fit-content;
+        width: -moz-fit-content;
+        width: -webkit-fit-content;
+		position: relative;
+		&:before {
+			position: absolute;
+			content: "";
+			left: 0;
+			height: 1px;
+			width: 0;
+			background: $primary-green;
+			bottom: 0;
+			transition-duration: 0.4s;
+		}
+		&:hover {
+			transition-duration: 0.4s;
+			&:before {
+				width: 100%;
+				transition-duration: 0.4s;
+			}
+		}
+	}
+	&.link-cta {
+		transition-duration: 0.4s;
+		&:hover {
+			color: $primary-red;
+			transition-duration: 0.4s;
+		}
+	}
+}
+
+
+.main-app {
+	display: flex;
+	gap: 80px;
+	width: 100%;
+	justify-content: flex-start;
+	align-items: flex-start;
+	@include phone {
+		display: block;
+	}
+	.side-left {
+		width: 30%;
+		height: calc(100vh - 64px);
+		position: relative;
+		@include for-tablet-only {}
+		@include phone {
+			width: auto;
+			position: fixed;
+			bottom: 24px;
+			left: 0;
+			right: 0;
+			text-align: center;
+			display: none;
+		}
+	}
+	.side-right {
+		width: 100%;
+	}
+}
+
+.span-light {
+	font-size: 12px;
+	line-height: 150%;
+	text-transform: uppercase;
+	color: $primary-grey;
+	font-family: "mona-sans-regular";
+}
